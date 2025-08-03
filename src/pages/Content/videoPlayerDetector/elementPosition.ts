@@ -27,7 +27,7 @@ const elementPosition: VideoPlayer = {
   },
   [s.amazon]: {
     video: { selector: 'video', index: 1 },
-    container: { selector: '.scalingVideoContainer', index: 0 },
+    container: { selector: '#dv-web-player', index: 0 },
     iconWrapper: {
       selector: '.hideableTopButtons div:first-child',
       index: 0,
@@ -36,7 +36,7 @@ const elementPosition: VideoPlayer = {
   },
   [s.amazonATV]: {
     video: { selector: 'video', index: 0 },
-    container: { selector: '.scalingVideoContainer', index: 0 },
+    container: { selector: '#dv-web-player', index: 0 },
     iconWrapper: {
       selector: '.atvwebplayersdk-hideabletopbuttons-container div:first-child',
       index: 0,
