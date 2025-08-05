@@ -22,6 +22,7 @@ export default function Content({ video, iconWrapper }) {
   const [speedDisplay, setSpeedDisplay] = useState(false);
   const [menu, setMenu] = useState(false);
   const netflix = window.location.hostname === 'www.netflix.com';
+  const amazon = /www\.amazon/.test(window.location.hostname) || /smile\.amazon/.test(window.location.hostname);
   const editRef = useRef(false);
 
   // Close the in-video popup menu when the real popup is opened
@@ -87,13 +88,23 @@ export default function Content({ video, iconWrapper }) {
             video.currentTime = video.currentTime + 5;
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 'a' && !netflix) {
+          } else if (key === 'a' && !netflix && !amazon) {
             // Previous Sentence
             document.getElementById('movie-subtitles-prev-button').click();
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 's' && !netflix) {
+          } else if (key === 's' && !netflix && !amazon) {
             // Next Sentence
+            document.getElementById('movie-subtitles-next-button').click();
+            event.preventDefault();
+            event.stopPropagation();
+          } else if (key === 's' && amazon) {
+            // Previous Sentence (Amazon)
+            document.getElementById('movie-subtitles-prev-button').click();
+            event.preventDefault();
+            event.stopPropagation();
+          } else if (key === 'd' && amazon) {
+            // Next Sentence (Amazon)
             document.getElementById('movie-subtitles-next-button').click();
             event.preventDefault();
             event.stopPropagation();

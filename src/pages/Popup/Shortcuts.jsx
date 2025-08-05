@@ -65,12 +65,12 @@ export default function Shortcuts({ setDisplayShortcuts, thisSite }) {
           <Divider />
           <ShortcutWrapper>
             <ShortcutItem>Previous sentence</ShortcutItem>
-            <ShortcutItem>a</ShortcutItem>
+            <ShortcutItem>{amazon ? 's' : 'a'}</ShortcutItem>
           </ShortcutWrapper>
           <Divider />
           <ShortcutWrapper>
             <ShortcutItem>Next sentence</ShortcutItem>
-            <ShortcutItem>s</ShortcutItem>
+            <ShortcutItem>{amazon ? 'd' : 's'}</ShortcutItem>
           </ShortcutWrapper>
           <Divider />
           <ShortcutWrapper>
