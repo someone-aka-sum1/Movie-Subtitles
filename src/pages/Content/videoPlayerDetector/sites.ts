@@ -7,6 +7,7 @@ const sites = {
   twitch: 'www.twitch.tv',
   dailymotion: 'www.dailymotion.com',
   tubi: 'tubitv.com',
+  disney: 'www.disneyplus.com',
   default: 'default',
 };
 
