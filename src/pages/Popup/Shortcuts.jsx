@@ -46,6 +46,7 @@ const useStyles = makeStyles({
 export default function Shortcuts({ setDisplayShortcuts, thisSite }) {
   const classes = useStyles();
   const netflix = thisSite === 'www.netflix.com';
+  const disney = thisSite === 'www.disneyplus.com';
   const amazon = /amazon/.test(thisSite);
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function Shortcuts({ setDisplayShortcuts, thisSite }) {
         onClick={() => setDisplayShortcuts(false)}
         className={classes.icon}
       />
-      {!netflix && (
+      {(!netflix && !disney) && (
         <>
           <Divider />
           <ShortcutWrapper>
