@@ -65,7 +65,7 @@ const elementPosition: VideoPlayer = {
   },
   [s.disney]: {
     video: { selector: '#hivePlayer', index: 0 },
-    container: { selector: '#hivePlayer', index: 0 },
+    container: { selector: 'disney-web-player', index: 0 },
     iconWrapper: null,
   },
   [s.default]: {

@@ -1,6 +1,14 @@
 export default function timeUpdate(subs, video, pos, setPos) {
   if (subs && subs.length > 1) {
-    const time = Number(video.currentTime.toFixed(3));
+    const disney = window.location.hostname === 'www.disneyplus.com';
+    let time = 0;
+    if (disney) {
+      // Disney+ uses a different way to get the current time
+      time = Number(Number(document.querySelector("div[class='slider-container']").ariaValueNow).toFixed(3));
+    } else {
+      // For all other sites we can use the video element's currentTime
+      time = Number(video.currentTime.toFixed(3));
+    }
     // See if it's the next or previous position.
     if (
       subs[pos] &&
