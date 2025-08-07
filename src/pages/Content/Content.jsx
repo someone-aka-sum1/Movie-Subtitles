@@ -22,6 +22,7 @@ export default function Content({ video, iconWrapper }) {
   const [speedDisplay, setSpeedDisplay] = useState(false);
   const [menu, setMenu] = useState(false);
   const netflix = window.location.hostname === 'www.netflix.com';
+  const disney = window.location.hostname === 'www.disneyplus.com';
   const amazon = /www\.amazon/.test(window.location.hostname) || /smile\.amazon/.test(window.location.hostname);
   const editRef = useRef(false);
 
@@ -68,32 +69,32 @@ export default function Content({ video, iconWrapper }) {
             }
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 'z' && !netflix) {
+          } else if (key === 'z' && !netflix && !disney) {
             // Rewind 2.5 Seconds
             video.currentTime = video.currentTime - 2.5;
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 'x' && !netflix) {
+          } else if (key === 'x' && !netflix && !disney) {
             // Fast-Forward 2.5 Seconds
             video.currentTime = video.currentTime + 2.5;
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 'ArrowLeft' && !netflix) {
+          } else if (key === 'ArrowLeft' && !netflix && !disney) {
             // Rewind 5 Seconds
             video.currentTime = video.currentTime - 5;
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 'ArrowRight' && !netflix) {
+          } else if (key === 'ArrowRight' && !netflix && !disney) {
             // Fast-Forward 5 Seconds
             video.currentTime = video.currentTime + 5;
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 'a' && !netflix && !amazon) {
+          } else if (key === 'a' && !netflix && !disney && !amazon) {
             // Previous Sentence
             document.getElementById('movie-subtitles-prev-button').click();
             event.preventDefault();
             event.stopPropagation();
-          } else if (key === 's' && !netflix && !amazon) {
+          } else if (key === 's' && !netflix && !disney && !amazon) {
             // Next Sentence
             document.getElementById('movie-subtitles-next-button').click();
             event.preventDefault();
@@ -158,6 +159,7 @@ export default function Content({ video, iconWrapper }) {
           subsEnabled={subsEnabled}
           speedDisplay={speedDisplay}
           netflix={netflix}
+          disney={disney}
           editRef={editRef}
         />
       <PopupWrapper

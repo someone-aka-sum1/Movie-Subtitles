@@ -77,7 +77,7 @@ const SubtitleArea = styled('div')({
   margin: 0,
 });
 
-function Subtitles({ video, subsEnabled, speedDisplay, netflix, editRef }) {
+function Subtitles({ video, subsEnabled, speedDisplay, netflix, disney, editRef }) {
   const [forcedPause, setForcedPause] = useState(false);
   const subsRef = useRef([{ text: subtitles.text.default }]);
   const [subs, setSubs] = useState(subsRef.current);
@@ -334,7 +334,7 @@ function Subtitles({ video, subsEnabled, speedDisplay, netflix, editRef }) {
             onMouseEnter={pauseHandler}
             onMouseLeave={playHandler}
           >
-            {(!netflix && !infoDialog && silenceIndicator) && (
+            {(!netflix && !disney && !infoDialog && silenceIndicator) && (
               <SubtitleButton
                 onClick={handlePrevButton}
                 id="movie-subtitles-prev-button"
@@ -362,14 +362,14 @@ function Subtitles({ video, subsEnabled, speedDisplay, netflix, editRef }) {
                     variant="contained"
                     color="primary"
                     onClick={() =>
-                      !netflix
+                      !netflix && !disney
                         ? (video.currentTime = subs[pos].music.end)
                         : null
                     }
                     onMouseEnter={() => setMusicHover(true)}
                     onMouseLeave={() => setMusicHover(false)}
                   >
-                    {musicHover && !netflix
+                    {musicHover && !netflix && !disney
                       ? 'Skip the music!'
                       : subs[pos].music.text}
                   </Button>
@@ -387,7 +387,7 @@ function Subtitles({ video, subsEnabled, speedDisplay, netflix, editRef }) {
                 </Grid>
               )}
             </SubtitleArea>
-            {(!netflix && !infoDialog && silenceIndicator) && (
+            {(!netflix && !disney && !infoDialog && silenceIndicator) && (
               <SubtitleButton
                 onClick={handleNextButton}
                 id="movie-subtitles-next-button"
