@@ -8,6 +8,7 @@ const sites = {
   dailymotion: 'www.dailymotion.com',
   tubi: 'tubitv.com',
   disney: 'www.disneyplus.com',
+  netflix: 'www.netflix.com',
   default: 'default',
 };
 

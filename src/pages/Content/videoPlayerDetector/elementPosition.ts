@@ -68,6 +68,11 @@ const elementPosition: VideoPlayer = {
     container: { selector: 'disney-web-player', index: 0 },
     iconWrapper: null,
   },
+  [s.netflix]: {
+    video: { selector: 'video', index: 0 },
+    container: { selector: '.watch-video', index: 0 },
+    iconWrapper: null,
+  },
   [s.default]: {
     video: { selector: 'video', index: 0 },
     container: { selector: 'video', index: 0 },
