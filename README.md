@@ -2,7 +2,7 @@
 
 ![Movie Subtitles Logo](src/assets/img/movie-subtitles-48.png)
 
-Add your own subtitles on almost any video/movie streaming platform you can think of, such as Amazon Prime, Netflix (with some restrictions), Youtube, Twitch and many more!
+Add your own subtitles on almost any video/movie streaming platform you can think of, such as Amazon Prime, Netflix (with some restrictions), Disney+ (with some restrictions), Youtube, Twitch and many more!
 
 ![previous sentence](src/assets/screenshots/33-seconds-silence.png)
 
@@ -32,7 +32,7 @@ Want to use convenient shortcuts? There's a variety of shortcuts you can use.
 
 ![previous sentence](src/assets/screenshots/available-shortcuts.png)
 
-> Note that Netflix restricts the functionality of browser extensions. For this reason, some shortcuts and functionalities are not available on Netflix!
+> Note that Netflix and Disney+ restrict the functionality of browser extensions. For this reason, some shortcuts and functionalities are not available on Netflix and Disney+!
 
 ## Other Useful Features
 
