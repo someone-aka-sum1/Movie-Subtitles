@@ -4,7 +4,7 @@ export default function timeUpdate(subs, video, pos, setPos) {
     let time = 0;
     if (disney) {
       // Disney+ uses a different way to get the current time
-      time = Number(Number(document.querySelector("div[class='slider-container']").ariaValueNow).toFixed(3));
+      time = Number(Number(document.querySelector("disney-web-player-ui progress-bar").shadowRoot.querySelector("[aria-valuenow]").ariaValueNow).toFixed(3));
     } else {
       // For all other sites we can use the video element's currentTime
       time = Number(video.currentTime.toFixed(3));
